@@ -23,11 +23,17 @@ function App() {
 		]);
 	}
 
+	function deleteTask(taskId) {
+		// console.log("delete " + taskId);
+		setTasks(tasks.filter((task) => task.id !== taskId));
+		console.log(tasks);
+	}
+
 	return (
 		<>
 			<TaskForm createTask={createTask} />
 			{/* Envia las tareas como un props al componente tasklist */}
-			<Tasklist tasks={tasks} />
+			<Tasklist tasks={tasks} deleteTask={deleteTask} />
 		</>
 	);
 }

@@ -17,7 +17,7 @@ export default function TaskForm({ createTask }) {
 			<form onSubmit={formSubmit}>
 				<input
 					type="text"
-					placeholder="Titulo"
+					placeholder="Title"
 					onChange={(e) => {
 						setTitle(e.target.value);
 					}}
@@ -26,12 +26,12 @@ export default function TaskForm({ createTask }) {
 				/>
 				<textarea
 					rows="3"
-					placeholder="descripción"
+					placeholder="Description"
 					onChange={(e) => {
 						setDescription(e.target.value);
 					}}
 					value={description}
-				></textarea>
+				/>
 				<button type="submit">Add</button>
 			</form>
 		</>
