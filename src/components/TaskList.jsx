@@ -1,7 +1,10 @@
-// Componente Tasklist
+import { useContext } from "react";
+import { TaskContext } from "../context/TaskContext";
 import TaskCard from "./TaskCard";
-// Recibe un objeto con una lista de tareas {task}
-export default function TaskList({ tasks, deleteTask }) {
+
+export default function TaskList() {
+	const { tasks } = useContext(TaskContext);
+
 	// Valida si el arreglo de tareas tiene elementos
 	if (tasks.length === 0) {
 		return (
@@ -16,7 +19,7 @@ export default function TaskList({ tasks, deleteTask }) {
 			<h2>Tasks</h2>
 			{/* Por cada tarea muestre sus datos con la funcion map() */}
 			{tasks.map((task) => (
-				<TaskCard task={task} key={task.id} deleteTask={deleteTask} />
+				<TaskCard task={task} key={task.id} />
 			))}
 		</div>
 	);
