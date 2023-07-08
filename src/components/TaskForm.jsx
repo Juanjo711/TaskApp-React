@@ -15,8 +15,8 @@ export default function TaskForm() {
 	}
 
 	return (
-		<>
-			<h2>New task</h2>
+		<div className="bg-slate-900 max-w-md mx-auto p-6 mb-3 rounded-md">
+			<h2 className="text-gray-50 text-xl font-bold mb-2">New task</h2>
 			<form onSubmit={formSubmit}>
 				<input
 					type="text"
@@ -25,6 +25,7 @@ export default function TaskForm() {
 						setTitle(e.target.value);
 					}}
 					value={title}
+					className="bg-slate-900 text-gray-200 p-1 w-full mb-3 border-b-2 border-slate-600 focus:outline-none"
 					autoFocus
 				/>
 				<textarea
@@ -34,9 +35,15 @@ export default function TaskForm() {
 						setDescription(e.target.value);
 					}}
 					value={description}
+					className="bg-slate-900 text-gray-300 p-1 w-full mb-3 border-b-2 border-slate-600 focus:outline-none"
 				/>
-				<button type="submit">Add</button>
+				<button
+					type="submit"
+					className="bg-slate-950 text-gray-50 font-bold w-full py-1"
+				>
+					Add
+				</button>
 			</form>
-		</>
+		</div>
 	);
 }

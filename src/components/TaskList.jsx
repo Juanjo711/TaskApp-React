@@ -9,18 +9,22 @@ export default function TaskList() {
 	if (tasks.length === 0) {
 		return (
 			<div>
-				<h2>Tasks not found.</h2>
+				<h2 className="text-gray-50 font-bold text-center mt-4">
+					Tasks not found.
+				</h2>
 			</div>
 		);
 	}
 
 	return (
-		<div>
-			<h2>Tasks</h2>
-			{/* Por cada tarea muestre sus datos con la funcion map() */}
-			{tasks.map((task) => (
-				<TaskCard task={task} key={task.id} />
-			))}
-		</div>
+		<>
+			<h2 className="text-gray-50 text-xl font-bold">Tasks</h2>
+			<div className="grid grid-cols-4 gap-3">
+				{/* Por cada tarea muestre sus datos con la funcion map() */}
+				{tasks.map((task) => (
+					<TaskCard task={task} key={task.id} />
+				))}
+			</div>
+		</>
 	);
 }
