@@ -39,7 +39,7 @@ export default function TaskForm() {
 				/>
 				<button
 					type="submit"
-					className="bg-slate-950 text-gray-50 font-bold w-full py-1"
+					className="bg-slate-950 text-gray-50 font-bold w-full py-1 hover:bg-slate-800"
 				>
 					Add
 				</button>
